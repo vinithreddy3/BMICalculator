@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import HomeScreen from './src/HomeScreen';
+import HomeScreen from './src/components/HomeScreen';
+import { ThemeProvider } from './src/utils/ThemeProvider';
 
 // Root component of the application
 const App = () => {
   return (
-    <>
-    <HomeScreen/>
-    </>
+    <ThemeProvider>
+      <HomeScreen />
+    </ThemeProvider>
   );
 };
 

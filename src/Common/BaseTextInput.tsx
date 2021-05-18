@@ -1,23 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { TextInput, TextInputProps } from 'react-native'
-import { getThemeColor } from '../Utils'
+import { themes } from '../themes';
+import { ThemeContext } from '../utils/ThemeProvider';
 
-interface BaseTextInputProps extends TextInputProps {
-    darkMode?: boolean
-}
+type BaseTextInputProps = TextInputProps;
 
-export class BaseTextInput extends Component<BaseTextInputProps>{
-    constructor(props: BaseTextInputProps) {
-        super(props)
-    }
-    render() {
+export const BaseTextInput: React.FC<BaseTextInputProps> = (props) => {
+    const { theme } = React.useContext(ThemeContext);
 
-        return (
-            <TextInput {...this.props} style={{ ...this.props.style, color: getThemeColor(this.props.darkMode || false),
-            borderBottomWidth: 1, borderBottomColor: getThemeColor(this.props.darkMode)}}
-                placeholderTextColor={this.props.darkMode ? '#C2C2C2': '#8A8989'} >
-                {this.props.children}
-            </TextInput>
-        )
-    }
+    return (
+        <TextInput {...props}
+            style={[
+                {
+                    color: themes[theme].inverted,
+                    borderBottomWidth: 1,
+                    borderBottomColor: themes[theme].inverted
+                },
+                props.style]}
+            placeholderTextColor={theme === 'light' ? '#C2C2C2' : '#8A8989'}
+        >
+            {props.children}
+        </TextInput>
+    )
 }

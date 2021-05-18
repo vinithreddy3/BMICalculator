@@ -3,10 +3,14 @@ export const localeStrings = {
     saved: "Saved",
     home: "Home",
     height: "Height",
+    cmPlaceholder: 'centimeter',
     weight: "Weight",
+    bmi: "BMI :  ",
+    kgPlaceholder: 'kilograms',
     date: "Date",
     category: "Category",
     bmiWeightHeight: "BMI/Weight/Height",
+    bmiSaved: "BMI record saved successfully",
     bmiCategories: {
         severelyUnderweight: { title: 'Severely Underweight', range: '< 16.5' },
         underweight: { title: 'UnderWeight', range: '< 18.5' },
@@ -16,4 +20,19 @@ export const localeStrings = {
         obese2: { title: 'Obesity Class II', range: '35 - 39.9' },
         obese3: { title: 'Obesity Class III', range: '> 40' },
     },
+    buttons: [
+        {
+            label: 'HOME',
+            key: 'Home'
+        },
+        {
+            label: 'SAVED',
+            key: 'Saved'
+        }
+    ]
+}
+
+export enum buttonTypes {
+    home = 'home',
+    saved = 'saved'
 }

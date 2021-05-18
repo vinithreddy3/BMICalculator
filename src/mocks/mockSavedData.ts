@@ -8,11 +8,13 @@ export const mockHistory = [
         date: 'today',
         bmi: 17.8,
         bmiWeightHeight: '17.8'
-    }, {
+    },
+    {
         date: 'today',
         bmi: 20,
         bmiWeightHeight: '20'
-    }, {
+    },
+    {
         date: 'today',
         bmi: 25,
         bmiWeightHeight: '25'

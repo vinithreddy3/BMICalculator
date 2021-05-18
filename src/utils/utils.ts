@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import { localeStrings } from './Locales';
+import { localeStrings } from '../Locales';
 
 // Set value in Async storage specific to a key
 const setASyncItem = async (data: any) => {
@@ -14,8 +14,7 @@ const setASyncItem = async (data: any) => {
 // Get value from Async storage based on key
 const getAsyncItem = async (key: string) => {
     try {
-        const value = await AsyncStorage.getItem(key)
-        return value
+        return await AsyncStorage.getItem(key)
     } catch (error) {
         console.log('Some error while using async storage getItem: ', error)
     }
@@ -56,7 +55,7 @@ const calculateBMI = (weight: number = 0, height: number = 0) => {
 
 // Function to return dark/light theme color code
 const getThemeColor = (isdark: boolean = false) => {
-    return isdark ? "#353533" : "#DFDFDF"
+    return isdark ? "#202020" : "#F8F8F8"
 }
 
 export { setASyncItem, getAsyncItem, getBMIcategory, calculateBMI, getThemeColor }
