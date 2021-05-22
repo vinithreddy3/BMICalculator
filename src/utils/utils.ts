@@ -53,9 +53,4 @@ const calculateBMI = (weight: number = 0, height: number = 0) => {
     return (weight && height && weight/(height*height)) * 10000 || '??'
 }
 
-// Function to return dark/light theme color code
-const getThemeColor = (isdark: boolean = false) => {
-    return isdark ? "#202020" : "#F8F8F8"
-}
-
-export { setASyncItem, getAsyncItem, getBMIcategory, calculateBMI, getThemeColor }
+export { setASyncItem, getAsyncItem, getBMIcategory, calculateBMI }
