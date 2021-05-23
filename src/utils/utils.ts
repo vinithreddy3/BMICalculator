@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native';
 import { localeStrings } from '../Locales';
 
 // Set value in Async storage specific to a key
-const setASyncItem = async (data: any) => {
+const setASyncItem = async (data: { key: string, value: string }) => {
     try {
         await AsyncStorage.setItem(data.key, data.value)
     }
@@ -50,7 +50,7 @@ const getBMIcategory = (bmivalue: number) => {
 // Function to calculate BMI(default weight is kgs, height is cms)
 // Used formula for BMI calculation - kilogram/meter*meter
 const calculateBMI = (weight: number = 0, height: number = 0) => {
-    return (weight && height && weight/(height*height)) * 10000 || '??'
+    return (weight && height && weight / (height * height)) * 10000 || '??'
 }
 
 export { setASyncItem, getAsyncItem, getBMIcategory, calculateBMI }

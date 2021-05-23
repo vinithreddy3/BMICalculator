@@ -1,6 +1,6 @@
 import React from "react";
-import { AsyncStorage } from "react-native";
-import { getAsyncItem } from "./utils";
+import { useColorScheme } from "react-native";
+import { getAsyncItem, setASyncItem } from "./utils";
 
 type themeVarieties = {
   color: string,
@@ -23,22 +23,26 @@ export const ThemeContext = React.createContext<themeContext>({
 });
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = React.useState<any>('light');
+  // get whether device theme is dark/light
+  const deviceTheme = useColorScheme();
+  const [theme, setTheme] = React.useState<any>(deviceTheme ?? 'light');
 
+  // Method to toggle light / dark theme
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
-      AsyncStorage.setItem('selectedTheme', 'dark');
+      setASyncItem({ key: 'selectedTheme', value: 'dark' });
     }
     else if (theme === 'dark') {
       setTheme('light')
-      AsyncStorage.setItem('selectedTheme', 'light');
+      setASyncItem({ key: 'selectedTheme', value: 'light' });
     }
   }
 
+  // Set the persisted theme selected by user
   React.useEffect(() => {
     getAsyncItem('selectedTheme').then((theme) => {
-      setTheme(theme ?? 'light');
+      theme && setTheme(theme);
     })
   }, [])
 

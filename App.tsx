@@ -11,7 +11,9 @@ const App = () => {
 
   // Hide Splash screen on app load.
   React.useEffect(() => {
-    SplashScreen.hide();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 250) //so that selected theme is set from async before rendering App
   });
 
   return (
