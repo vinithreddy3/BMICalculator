@@ -13,7 +13,7 @@ const App = () => {
   React.useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
-    }, 250) //so that selected theme is set from async before rendering App
+    }, 500) //so that selected theme is set from async before rendering App
   });
 
   return (

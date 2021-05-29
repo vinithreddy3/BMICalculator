@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     listItem: {
         flexDirection: 'row', justifyContent: 'space-around',
         alignContent: 'space-around', paddingVertical: 15,
-        borderBottomWidth: 1, paddingHorizontal: 15
+        borderBottomWidth: 1, paddingHorizontal: 12
     },
     listItemHeaders: { fontSize: 14, fontWeight: 'bold' },
     date: { flex: 1.6 },
-    category: { flex: 2.4, paddingHorizontal: 10 },
-    bmi: { flex: 2 },
+    category: { flex: 2.2, paddingHorizontal: 5 },
+    bmi: { flex: 2.2 },
     bold: { fontWeight: 'bold' }
 });
 

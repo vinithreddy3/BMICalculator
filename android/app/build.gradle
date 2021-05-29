@@ -78,6 +78,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
+    // TODO enableHermes while making release store builds
     enableHermes: false,  // clean and rebuild if changing
 ]
 
@@ -132,8 +133,8 @@ android {
         applicationId "com.bmicalculatortracker"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "0.0.2"
+        versionCode 3
+        versionName "0.0.3"
     }
     splits {
         abi {

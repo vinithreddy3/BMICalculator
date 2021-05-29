@@ -1,9 +1,10 @@
 {
   "name": "BMICalculator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "androidRelease": "react-native run-android --variant release",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",

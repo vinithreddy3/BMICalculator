@@ -8,3 +8,8 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+
+# TODO uncomment below during release build with Hermes
+# -keep class com.facebook.hermes.unicode.** { *; }
+# -keep class com.facebook.jni.** { *; }
